@@ -1,20 +1,43 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, session} = require('electron')
 const path = require('path')
+const { ElectronBlocker } = require('@cliqz/adblocker-electron');
+const fetch = require('cross-fetch');
 //const os = require('os')
 //TODO FIGURE OUT WHY AND HOW THE FUCK TO STOP MULTPLE WINDOWS FROM OPENING
 
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1';
+/*
+WebExtensionBlocker.fromPrebuiltAdsAndTracking().then((blocker) => {
+  blocker.enableBlockingInBrowser(browser);
+});*/
+let mainWindow = null;
 
+const gotTheLock = app.requestSingleInstanceLock()
+
+if (!gotTheLock) {
+  app.quit()
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory) => {
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore()
+      mainWindow.focus()
+    }
+  })
+}
 
 function createWindow () {
-  // Create the browser window.
-  const mainWindow = new BrowserWindow({
+
+ 
+
+// Create the browser window.
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       allowEval: false, // This is the key!
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      webSecurity: false
     }
   })
 
@@ -43,11 +66,18 @@ function createWindow () {
 
 
 
+
 app.whenReady().then(() => {
+
+  ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
+    blocker.enableBlockingInSession(session.defaultSession);
+  });
+
+ // CORS()
   createWindow()
   
 
-  session.defaultSession.loadExtension(path.join( __dirname , '/Ext/gighmmpiobklfepjocnamgkkbiglidom/5.1.2_0'))
+  session.defaultSession.loadExtension(path.join( __dirname , '/Ext/ublock/1.44.4_0/'))
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
@@ -63,7 +93,37 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
 
+/*
+async function CORS()
+{
+  const filter = {
+    urls: ['http://example.com/*']
+  };
 
+  session.defaultSession.webRequest.onBeforeSendHeaders(
+    filter,
+    (details, callback) => {
+      console.log(details);
+      details.requestHeaders['Origin'] = 'http://example.com';
+      callback({ requestHeaders: details.requestHeaders });
+    }
+  );
+
+  session.defaultSession.webRequest.onHeadersReceived(
+    filter,
+    (details, callback) => {
+      console.log(details);
+      details.responseHeaders['Access-Control-Allow-Origin'] = [
+        'capacitor-electron://-'
+      ];
+      callback({ responseHeaders: details.responseHeaders });
+    }
+  );
+  
+  myCapacitorApp.init();
+}
+
+*/
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
