@@ -3,32 +3,15 @@ const {app, BrowserWindow, session} = require('electron')
 const path = require('path')
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const fetch = require('cross-fetch');
-//const os = require('os')
-//TODO FIGURE OUT WHY AND HOW THE FUCK TO STOP MULTPLE WINDOWS FROM OPENING
 
+//stop it from blocking stuffs
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1';
-/*
-WebExtensionBlocker.fromPrebuiltAdsAndTracking().then((blocker) => {
-  blocker.enableBlockingInBrowser(browser);
-});*/
+
+//intilize mainWindow so it can be refrenced everywhere
 let mainWindow = null;
-
-const gotTheLock = app.requestSingleInstanceLock()
-
-if (!gotTheLock) {
-  app.quit()
-} else {
-  app.on('second-instance', (event, commandLine, workingDirectory) => {
-    if (mainWindow) {
-      if (mainWindow.isMinimized()) mainWindow.restore()
-      mainWindow.focus()
-    }
-  })
-}
 
 function createWindow () {
 
- 
 
 // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -38,7 +21,25 @@ function createWindow () {
       allowEval: false, // This is the key!
       preload: path.join(__dirname, 'preload.js'),
       webSecurity: false
+    },
+    autoHideMenuBar: true,
+  })
+
+  //dont allow any other URLS other than gogoanime
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    if (url === 'https://ww4.gogoanimes.org') {
+      return {
+        action: 'allow',
+        overrideBrowserWindowOptions: {
+          webPreferences: {
+            allowEval: false, // This is the key!
+            preload: path.join(__dirname, 'preload.js'),
+            webSecurity: false
+          }
+        }
+      }
     }
+    return { action: 'deny' }
   })
 
   // and load the index.html of the app.
@@ -46,37 +47,25 @@ function createWindow () {
   mainWindow.loadURL('https://ww4.gogoanimes.org')
   mainWindow.show()
   mainWindow.focus()
-
-
+  //mainWindow.webContents.insertCSS('html, body { overflow: hidden;  }')
+ // mainWindow.webContents.insertCSS('html, .wrapper_inside { overflow-y: scroll; padding-right: 0px; }')
+  
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
 
 
 
-
- 
-  // Note that in order to use the React DevTools extension, you'll need to 
-  // download and unzip a copy of the extension. 
-
-
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-
-
-
-
 app.whenReady().then(() => {
 
+//blocker
   ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
     blocker.enableBlockingInSession(session.defaultSession);
   });
 
- // CORS()
   createWindow()
   
-
+//load ublock
   session.defaultSession.loadExtension(path.join( __dirname , '/Ext/ublock/1.44.4_0/'))
 
   app.on('activate', function () {
@@ -93,37 +82,3 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
 
-/*
-async function CORS()
-{
-  const filter = {
-    urls: ['http://example.com/*']
-  };
-
-  session.defaultSession.webRequest.onBeforeSendHeaders(
-    filter,
-    (details, callback) => {
-      console.log(details);
-      details.requestHeaders['Origin'] = 'http://example.com';
-      callback({ requestHeaders: details.requestHeaders });
-    }
-  );
-
-  session.defaultSession.webRequest.onHeadersReceived(
-    filter,
-    (details, callback) => {
-      console.log(details);
-      details.responseHeaders['Access-Control-Allow-Origin'] = [
-        'capacitor-electron://-'
-      ];
-      callback({ responseHeaders: details.responseHeaders });
-    }
-  );
-  
-  myCapacitorApp.init();
-}
-
-*/
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
