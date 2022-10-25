@@ -95,7 +95,7 @@ app.whenReady().then(() => {
 
   
 //load ublock
-  session.defaultSession.loadExtension(path.join( __dirname , '/Ext/ublock/1.44.4_0/'))
+ // session.defaultSession.loadExtension(path.join( __dirname , '/Ext/ublock/1.44.4_0/'))
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
