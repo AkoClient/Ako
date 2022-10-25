@@ -1,10 +1,9 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, session} = require('electron')
+const {app, BrowserWindow, session, globalShortcut} = require('electron')
 const path = require('path')
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const fetch = require('cross-fetch');
 const client = require('discord-rich-presence')('1033927014995992596');
-
 
 //stop it from blocking stuffs
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1';
@@ -51,6 +50,7 @@ function createWindow () {
           webPreferences: {
             allowEval: false, // This is the key!
             preload: path.join(__dirname, 'preload.js'),
+            devTools: false,
             webSecurity: false
           }
         }
@@ -105,6 +105,14 @@ function createWindow () {
 app.whenReady().then(() => {
 
   updateP()
+
+   // Register a shortcut listener for Ctrl + Shift + I
+   globalShortcut.register('Control+Shift+I', () => {
+    // When the user presses Ctrl + Shift + I, this function will get called
+    // You can modify this function to do other things, but if you just want
+    // to disable the shortcut, you can just return false
+    return false;
+});
 
 
 //blocker
