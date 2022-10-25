@@ -8,6 +8,10 @@
 
 <h3>A Electron project that turns gogoanime into a desktop app!  &lt;3 </h3>
 
-
-THIS STILL NEEDS ALOT OF WORK NEED TO IMPLEMENT A FULL ADBLOCK AND STOP POPUPS AND SECONDARY WINDOWS
-also todo: add discord RP
+Current known issues include:
+<p align="center">
+&nbsp; 
+</p>
+- A slight delay when updating DiscordRPC
+- DiscordRPC stuck on watching while searching for anime
+- Scroll bar is not hidden (when hidden stops scrolling ;-;)
