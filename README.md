@@ -1,5 +1,5 @@
 
-<h1 align="center"><img src="./imgs/banner.png"></h1>
+<h1 align="center"><img src="./imgs/banner.png" width="400"></h1>
 
 # Gogoanime_Desktop
 A Electron project that turns gogoanime into a desktop app!  &lt;3 
