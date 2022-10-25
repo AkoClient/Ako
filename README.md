@@ -9,9 +9,7 @@
 <h3>A Electron project that turns gogoanime into a desktop app!  &lt;3 </h3>
 
 Current known issues include:
-<p align="center">
-&nbsp; 
-</p>
+
 - A slight delay when updating DiscordRPC
 - DiscordRPC stuck on watching while searching for anime
 - Scroll bar is not hidden (when hidden stops scrolling ;-;)
