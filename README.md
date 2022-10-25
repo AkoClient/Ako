@@ -1,6 +1,16 @@
 
 <h1 align="center"><img src="./imgs/banner.png" width="400"></h1>
-<div align="center"> <img src="https://camo.githubusercontent.com/fabadd8b5a200291761524d925bdd73eee8a11c4dcc58044e99541d36fc05535/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636c69717a2d706f77657265642d626c75653f6c6f676f3d636c69717a267374796c653d666c61742d737175617265" alt="powered by Cliqz" data-canonical-src="https://img.shields.io/badge/cliqz-powered-blue?logo=cliqz&amp;style=flat-square" style="max-width: 100%;"> </div>
+
+<div id="badges" align="center">
+  <a href="https://discordapp.com/users/427835914052567040">
+    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white" alt="Discord Badge"/>
+  </a>
+ <a href="https://github.com/ghostery/adblocker/">
+<img src="https://camo.githubusercontent.com/fabadd8b5a200291761524d925bdd73eee8a11c4dcc58044e99541d36fc05535/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636c69717a2d706f77657265642d626c75653f6c6f676f3d636c69717a267374796c653d666c61742d737175617265" alt="powered by Cliqz" data-canonical-src="https://img.shields.io/badge/cliqz-powered-blue?logo=cliqz&amp;style=flat-square" style="max-width: 100%;">
+  </a>
+
+   
+</div>
 A Electron project that turns gogoanime into a desktop app!  &lt;3 
 
 THIS STILL NEEDS ALOT OF WORK NEED TO IMPLEMENT A FULL ADBLOCK AND STOP POPUPS AND SECONDARY WINDOWS
