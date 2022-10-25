@@ -14,9 +14,7 @@
 - DiscordRPC stuck on watching while searching for anime
 - Scroll bar is not hidden (when hidden stops scrolling ;-;)
 
-<p align="center">
-&nbsp; 
-</p>
+---
 
 **TODOS:**
 - Fix DiscordRPC problems
