@@ -77,6 +77,12 @@ function createWindow () {
       console.log(epNum)
       staterpc = "Ep " + epNum
       updateP()
+    }else if(currentURL.includes("search"))
+    {
+      details = 'Searching...';
+      staterpc = undefined;
+      playON = undefined;
+      updateP()
     } else {
       details = 'In main menu';
       staterpc = undefined;
