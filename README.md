@@ -21,4 +21,4 @@
 **TODOS:**
 - Fix DiscordRPC problems
 - hide scrollbar without ruining app
-- custom CSS and HTML injection to add some flare :sparkle:
+- custom CSS and HTML injection to add some flare :sparkles:
