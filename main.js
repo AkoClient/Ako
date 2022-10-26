@@ -18,6 +18,11 @@ let details = 'In main menu';
 let staterpc;
 let playON;
 
+
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function createWindow () {
 
 
@@ -72,7 +77,7 @@ function createWindow () {
       let dtemp2 = dtemp.replaceAll('-', " ")
       let d = dtemp2.split("episode")[0];
       console.log(d); 
-      details = "Watching: " + d;
+      details = "Watching: " + capitalize(d);
       let epNum = dtemp2.split('episode').splice(1).join('episode')
       console.log(epNum)
       staterpc = "Ep " + epNum
