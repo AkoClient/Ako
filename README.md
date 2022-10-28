@@ -8,7 +8,7 @@
 
 <h3>A Electron project that turns gogoanime into a desktop app!  &lt;3 </h3>
 
-<h3 align="center"><img src="./imgs/Capture.PNG" width="200"></h3>
+<h3 align="left"><img src="./imgs/Capture.PNG" width="240"></h3>
 
 **Current known issues include:**
 
