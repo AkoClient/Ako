@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
+  "name": "ako",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "a Gogoanime Desktop app",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
