@@ -28,6 +28,6 @@
     "discord-rich-presence": "^0.0.8",
     "electron-store": "^8.1.0",
     "electron-web-blocker": "^1.0.5",
-    "node-fetch": "^3.2.10"
+    "node-fetch": "^3.3.0"
   }
 }
