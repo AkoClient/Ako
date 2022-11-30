@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, session, globalShortcut} = require('electron')
+const { app, BrowserWindow, session, globalShortcut } = require('electron')
 const path = require('path')
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const fetch = require('cross-fetch');
@@ -20,18 +20,18 @@ let details = 'In main menu';
 let staterpc;
 let playON;
 
+//Presistance Varaibles
 let setUrl
-
 pr = store.get('p');
 
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function createWindow () {
+function createWindow() {
 
 
-// Create the browser window.
+  // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -41,13 +41,13 @@ function createWindow () {
       webSecurity: false,
       //icon: path.join(__dirname,'/images/icon.png')
     },
-  autoHideMenuBar: true,
-  //  titleBarStyle: 'hidden',
+    autoHideMenuBar: true,
+    //  titleBarStyle: 'hidden',
   })
 
   //Set title ;>
   mainWindow.setTitle('Gogoanime Desktop');
-  mainWindow.on('page-title-updated', function(e) {
+  mainWindow.on('page-title-updated', function (e) {
     e.preventDefault()
   });
 
@@ -69,61 +69,61 @@ function createWindow () {
     return { action: 'deny' }
   })
 
-  if (pr == null){
-    setUrl  = 'https://ww4.gogoanimes.org';
-  } else 
-  {
+  //if presistance exists load it otherwise dont;;
+  if (pr == null) {
+    setUrl = 'https://ww4.gogoanimes.org';
+  } else {
     setUrl = pr
   }
 
   mainWindow.loadURL(setUrl).then(() => {
 
- mainWindow.webContents.on('did-frame-navigate', function() {
+    mainWindow.webContents.on('did-frame-navigate', function () {
 
-    currentURL = mainWindow.webContents.getURL()
-    console.log(currentURL)
+      mainWindow.webContents.insertCSS('.logo.show.ads-evt {content: url("https://github.com/zoeeechu/Ako/blob/main/logo.png?raw=true");}')
 
-   // p = currentURL;
-    store.set('p', currentURL);
+      currentURL = mainWindow.webContents.getURL()
+      console.log(currentURL)
 
-    if (currentURL.includes("watch"))
-    {
-      playON = 'play'
-      let dtemp = currentURL.replace('https://ww4.gogoanimes.org/watch/','');
-      let dtemp2 = dtemp.replaceAll('-', " ")
-      let d = dtemp2.split("episode")[0];
-      console.log(d); 
-      details = "Watching: " + capitalize(d);
-      let epNum = dtemp2.split('episode').splice(1).join('episode')
-      console.log(epNum)
-      staterpc = "Ep " + epNum
-      updateP()
-    }else if(currentURL.includes("search"))
-    {
-      details = 'Searching...';
-      staterpc = undefined;
-      playON = undefined;
-      updateP()
-    } else {
-      details = 'In main menu';
-      staterpc = undefined;
-      playON = undefined;
-      updateP()
-    }
+      //save last veiwed page
+      store.set('p', currentURL);
 
-})
+      if (currentURL.includes("watch")) {
+        playON = 'play'
+        let dtemp = currentURL.replace('https://ww4.gogoanimes.org/watch/', '');
+        let dtemp2 = dtemp.replaceAll('-', " ")
+        let d = dtemp2.split("episode")[0];
+        console.log(d);
+        details = "Watching: " + capitalize(d);
+        let epNum = dtemp2.split('episode').splice(1).join('episode')
+        console.log(epNum)
+        staterpc = "Ep " + epNum
+        updateP()
+      } else if (currentURL.includes("search")) {
+        details = 'Searching...';
+        staterpc = undefined;
+        playON = undefined;
+        updateP()
+      } else {
+        details = 'In main menu';
+        staterpc = undefined;
+        playON = undefined;
+        updateP()
+      }
+
+    })
 
 
   })
   mainWindow.show()
   mainWindow.focus()
 
- 
 
-//injecting CSS TEST WORKON LATER
-//mainWindow.webContents.insertCSS('html, body { overflow: hidden;  }')
-//mainWindow.webContents.insertCSS('html, .logo { display: block; -moz-box-sizing: border-box; box-sizing: border-box; background: url(https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2022-07/kitten-playing-575035.jpg) no-repeat; }')
-// mainWindow.webContents.insertCSS('html, .wrapper_inside { overflow-y: scroll; padding-right: 0px; }')
+
+  //injecting CSS TEST WORKON LATER
+  //mainWindow.webContents.insertCSS('html, body { overflow: hidden;  }')
+  mainWindow.webContents.insertCSS('.logo.show.ads-evt {content: url("https://github.com/zoeeechu/Ako/blob/main/logo.png?raw=true");}')
+  // mainWindow.webContents.insertCSS('html, .wrapper_inside { overflow-y: scroll; padding-right: 0px; }')
 
 }
 
@@ -133,16 +133,16 @@ app.whenReady().then(() => {
 
   updateP()
 
-   // Register a shortcut listener for Ctrl + Shift + I
-   globalShortcut.register('Control+Shift+I', () => {
+  // Register a shortcut listener for Ctrl + Shift + I
+  globalShortcut.register('Control+Shift+I', () => {
     // When the user presses Ctrl + Shift + I, this function will get called
     // You can modify this function to do other things, but if you just want
     // to disable the shortcut, you can just return false
     return false;
-});
+  });
 
 
-//blocker
+  //blocker
   ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
     blocker.enableBlockingInSession(session.defaultSession);
   });
@@ -165,8 +165,7 @@ app.on('window-all-closed', function () {
 })
 
 
-async function updateP()
-{
+async function updateP() {
   client.updatePresence({
     state: staterpc,
     details: details,
