@@ -80,6 +80,7 @@ function createWindow() {
 
     mainWindow.webContents.on('did-frame-navigate', function () {
 
+      //re-inject logo onclick
       mainWindow.webContents.insertCSS('.logo.show.ads-evt {content: url("https://github.com/zoeeechu/Ako/blob/main/logo.png?raw=true");}')
 
       currentURL = mainWindow.webContents.getURL()
@@ -121,10 +122,10 @@ function createWindow() {
 
 
   //injecting CSS TEST WORKON LATER
-  //mainWindow.webContents.insertCSS('html, body { overflow: hidden;  }')
   mainWindow.webContents.insertCSS('.logo.show.ads-evt {content: url("https://github.com/zoeeechu/Ako/blob/main/logo.png?raw=true");}')
+  
   // mainWindow.webContents.insertCSS('html, .wrapper_inside { overflow-y: scroll; padding-right: 0px; }')
-
+  //mainWindow.webContents.insertCSS('html, body { overflow: hidden;  }')
 }
 
 
