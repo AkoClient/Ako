@@ -4,6 +4,8 @@ const path = require('path')
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const fetch = require('cross-fetch');
 const client = require('discord-rich-presence')('1033927014995992596');
+const Store = require('electron-store');
+const store = new Store();
 
 //stop it from blocking stuffs
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1';
@@ -18,6 +20,9 @@ let details = 'In main menu';
 let staterpc;
 let playON;
 
+let setUrl
+
+pr = store.get('p');
 
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -36,7 +41,7 @@ function createWindow () {
       webSecurity: false,
       //icon: path.join(__dirname,'/images/icon.png')
     },
-    autoHideMenuBar: true,
+  autoHideMenuBar: true,
   //  titleBarStyle: 'hidden',
   })
 
@@ -48,7 +53,7 @@ function createWindow () {
 
   //dont allow any other URLS other than gogoanime
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
-    if (url === 'https://ww4.gogoanimes.org') {
+    if (url.startsWith === 'https://ww4.gogoanimes.org') {
       return {
         action: 'allow',
         overrideBrowserWindowOptions: {
@@ -64,11 +69,22 @@ function createWindow () {
     return { action: 'deny' }
   })
 
-  mainWindow.loadURL('https://ww4.gogoanimes.org').then(() => {
+  if (pr == null){
+    setUrl  = 'https://ww4.gogoanimes.org';
+  } else 
+  {
+    setUrl = pr
+  }
+
+  mainWindow.loadURL(setUrl).then(() => {
 
  mainWindow.webContents.on('did-frame-navigate', function() {
+
     currentURL = mainWindow.webContents.getURL()
     console.log(currentURL)
+
+   // p = currentURL;
+    store.set('p', currentURL);
 
     if (currentURL.includes("watch"))
     {
