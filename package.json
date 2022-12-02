@@ -1,6 +1,6 @@
 {
-  "name": "ako",
-  "version": "1.0.0",
+  "name": "Ako",
+  "version": "1.0.3",
   "description": "a Gogoanime Desktop app",
   "main": "main.js",
   "scripts": {
