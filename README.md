@@ -18,7 +18,7 @@
 
 
 
-<h3 align="left"><img src="./imgs/Window.png" width="240"></h3>
+<h3 align="left"><img src="./imgs/Window.PNG" width="240"></h3>
 
 ---
 
