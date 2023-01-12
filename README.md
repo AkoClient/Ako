@@ -16,12 +16,14 @@
 - DiscordRPC stuck on watching while searching for anime
 - Scroll bar is not hidden (when hidden stops scrolling ;-;)
 
+
+
+<h3 align="left"><img src="./imgs/window.png" width="240"></h3>
+
 ---
 
 **TODOS:**
-- Fix DiscordRPC problems
 - hide scrollbar without ruining app
-- custom CSS and HTML injection to add some flare :sparkles:
 
 <p align="center">
 &nbsp; 
