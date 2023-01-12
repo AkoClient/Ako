@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@cliqz/adblocker-electron": "^1.25.1",
-    "@types/webextension-polyfill": "^0.9.1",
+    "@types/webextension-polyfill": "^0.10.0",
     "cross-fetch": "^3.1.5",
     "custom-electron-titlebar": "^4.1.1",
     "discord-rich-presence": "^0.0.8",
