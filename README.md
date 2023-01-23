@@ -6,8 +6,10 @@
 &nbsp; 
 </p>
 
-<img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="left" width="250px"/>
-<h3>Hello I am Ako a Electron project that turns gogoanime into a desktop app! &lt;3 </h3>
+<img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="left" width="400px"/>
+<h3>Hey~	♡ I am Ako! &lt;3 </h3>
+<h3> an Electron project that turns gogoanime into a desktop app! &lt;3 </h3>
+<h3> into a desktop app! &lt;3 </h3>
 <br clear="left"/>
 
 <h3 align="left"><img src="./imgs/Capture.PNG" width="240"></h3>
