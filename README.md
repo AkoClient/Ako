@@ -1,4 +1,3 @@
-
 <h1 align="center"><img src="./imgs/banner.png" width="400"></h1>
 <div align="right"> <img src="https://camo.githubusercontent.com/fabadd8b5a200291761524d925bdd73eee8a11c4dcc58044e99541d36fc05535/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636c69717a2d706f77657265642d626c75653f6c6f676f3d636c69717a267374796c653d666c61742d737175617265" alt="powered by Cliqz" data-canonical-src="https://img.shields.io/badge/cliqz-powered-blue?logo=cliqz&amp;style=flat-square" style="max-width: 100%;"> </div>
 
@@ -6,13 +5,68 @@
 &nbsp; 
 </p>
 
-<img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="left" width="400px"/>
-<h3>Hey~	♡ I am Ako! &lt;3 </h3>
-<h3> an Electron project that turns gogoanime into a desktop app! &lt;3 </h3>
-<h3> into a desktop app! &lt;3 </h3>
+
+
+<dl>
+  <dd>
+    <dl>
+      <dd>
+        <dl>
+          <dd>
+<img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="left" width="250px"/>
+<p align="left" >&nbsp;&nbsp; Hey~	♡ I am Ako! </p>
+<p>&nbsp;&nbsp; an Electron project that turns gogoanime </p>
+<p>&nbsp;&nbsp; into a desktop app! &lt;3 </p>
 <br clear="left"/>
+          <dd>
+        <dl>
+     </dd>
+    </dl>
+  </dd>
+</dl>
+
+---
+&nbsp;
+
+
+**About**
+&nbsp;
+
+What is this project exactly?
+
+This is a electron based desktop app that turns gogoanime into a desktop app 
+without all those silly ads and trackers because who needs those right? :wink:
+
+
+**Features**
+&nbsp;
+
+- Ad Blocking
+- Discord RPC support
+- Persistance (so you can pickup where you left off)
+  
+&nbsp;
 
 <h3 align="left"><img src="./imgs/Capture.PNG" width="240"></h3>
+
+
+---
+&nbsp;
+
+**FAQ**
+&nbsp;
+
+- I See a white screen what do I do? 
+> this usally means that the host site is down 
+> you may have to try again later :(
+&nbsp;
+- I Found a Ad what do I do?
+> While this project aims to be adless it isnt perfect 
+> If you find a ad the best thing you can do is note down the ad
+> and report it it seems to sometimes bypass the filter by being in 
+> in the video embed though its a rare situation :(
+
+
 
 **Current known issues include:**
 
@@ -22,13 +76,12 @@
 
 
 
-<h3 align="left"><img src="./imgs/Window.PNG" width="500"></h3>
-
 ---
 
 **TODOS:**
-- hide scrollbar without ruining app
 
+- hide scrollbar without ruining app
+<h3 align="left"><img src="./imgs/Window.PNG" width="500"></h3>
 <p align="center">
 &nbsp; 
 </p>
