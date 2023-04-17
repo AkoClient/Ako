@@ -7,6 +7,8 @@ const client = require('discord-rich-presence')('1033927014995992596');
 const Store = require('electron-store');
 const store = new Store();
 
+require('update-electron-app')()
+
 //stop it from blocking stuffs
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1';
 
@@ -19,6 +21,8 @@ let currentURL;
 let details = 'In main menu';
 let staterpc;
 let playON;
+
+
 
 //Presistance Varaibles
 let setUrl
@@ -53,7 +57,7 @@ function createWindow() {
 
   //dont allow any other URLS other than gogoanime
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
-    if (url.startsWith === 'https://ww4.gogoanimes.org') {
+    if (url.startsWith === 'https://ww5.gogoanimes.org') {
       return {
         action: 'allow',
         overrideBrowserWindowOptions: {
@@ -71,7 +75,7 @@ function createWindow() {
 
   //if presistance exists load it otherwise dont;;
   if (pr == null) {
-    setUrl = 'https://ww4.gogoanimes.org';
+    setUrl = 'https://ww5.gogoanimes.org';
   } else {
     setUrl = pr
   }
@@ -91,7 +95,7 @@ function createWindow() {
 
       if (currentURL.includes("watch")) {
         playON = 'play'
-        let dtemp = currentURL.replace('https://ww4.gogoanimes.org/watch/', '');
+        let dtemp = currentURL.replace('https://ww5.gogoanimes.org/watch/', '');
         let dtemp2 = dtemp.replaceAll('-', " ")
         let d = dtemp2.split("episode")[0];
         console.log(d);
