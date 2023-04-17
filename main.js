@@ -95,13 +95,14 @@ function createWindow() {
 
       if (currentURL.includes("watch")) {
         playON = 'play'
-        let dtemp = currentURL.replace('https://ww5.gogoanimes.org/watch/', '');
+        newdtemp = currentURL.substr(12); /// remove https://ww5.
+        let dtemp = newdtemp.replace('gogoanimes.org/watch/', '');
         let dtemp2 = dtemp.replaceAll('-', " ")
         let d = dtemp2.split("episode")[0];
-        console.log(d);
+       // console.log(d);
         details = "Watching: " + capitalize(d);
         let epNum = dtemp2.split('episode').splice(1).join('episode')
-        console.log(epNum)
+        //console.log(epNum)
         staterpc = "Ep " + epNum
         updateP()
       } else if (currentURL.includes("search")) {
