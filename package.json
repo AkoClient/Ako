@@ -1,6 +1,6 @@
 {
   "name": "Ako",
-  "version": "0.4-beta",
+  "version": "0.0.4",
   "description": "a Gogoanime Desktop app",
   "main": "main.js",
   "scripts": {
