@@ -1,4 +1,5 @@
 // Modules to control application life and create native browser window
+//added MAL Thumbnail support for RPC
 const { app, BrowserWindow, session, globalShortcut } = require('electron')
 const path = require('path')
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
