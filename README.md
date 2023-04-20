@@ -14,7 +14,7 @@
         <dl>
           <dd>
 <img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="right" width="250px"/>
-<p align="right" >&nbsp;&nbsp; Hey~	♡ I am Ako! </p>
+<p align="left" >&nbsp;&nbsp; Hey~	♡ I am Ako! </p>
 <p>&nbsp;&nbsp; an Electron project that turns gogoanime </p>
 <p>&nbsp;&nbsp; into a desktop app! &lt;3 </p>
 <br clear="left"/>
