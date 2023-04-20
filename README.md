@@ -39,7 +39,7 @@ without all those silly ads and trackers because who needs those right? :wink:
   
 &nbsp;
 
-<h3 align="left"><img src="./imgs/RPC_example.PNG" width="260"></h3>
+<h3 align="left"><img src="./imgs/RPC_example.PNG" width="300"></h3>
 
 
 ---
