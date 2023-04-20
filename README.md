@@ -5,8 +5,13 @@
 &nbsp; 
 </p>
 
-|<p align="left" >Hey~	♡ I am Ako! &nbsp;&nbsp; **<br>** an Electron project that turns gogoanime **<br>** into a desktop app!</p>  | <img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="right" width="250px"/> |
-|--|--|
+<img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="right" width="260px"/>
+**Hey~	♡ I am Ako!**
+<br> 
+**an Electron project that turns gogoanime** 
+<br> 
+**into a desktop app!**
+<br clear="left"/>
 &nbsp;
 
 
