@@ -6,11 +6,11 @@
 </p>
 
 <img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="right" width="260px"/>
-**Hey~	♡ I am Ako!**
+<h3>Hey~	♡ I am Ako!</h3>
 <br> 
-**an Electron project that turns gogoanime** 
+an Electron project that turns gogoanime
 <br> 
-**into a desktop app!**
+into a desktop app!
 <br clear="left"/>
 &nbsp;
 
