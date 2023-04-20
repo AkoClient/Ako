@@ -29,7 +29,7 @@ without all those silly ads and trackers because who needs those right? :wink:
 
 &nbsp;
 
-**Features** 🚀
+**Features** :rocket:
 &nbsp;
 
 - Ad Blocking
@@ -44,7 +44,7 @@ without all those silly ads and trackers because who needs those right? :wink:
 ---
 &nbsp;
 
-**FAQ** ❓
+**FAQ** :question:
 &nbsp;
 
 - I See a white screen what do I do? 
