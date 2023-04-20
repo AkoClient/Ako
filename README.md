@@ -27,8 +27,9 @@ into a desktop app!
 This is a electron based desktop app that turns gogoanime into a desktop app 
 without all those silly ads and trackers because who needs those right? :wink:
 
+&nbsp;
 
-**Features**
+**Features** 🚀
 &nbsp;
 
 - Ad Blocking
@@ -43,7 +44,7 @@ without all those silly ads and trackers because who needs those right? :wink:
 ---
 &nbsp;
 
-**FAQ**
+**FAQ** ❓
 &nbsp;
 
 - I See a white screen what do I do? 
