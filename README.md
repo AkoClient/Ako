@@ -6,7 +6,7 @@
 </p>
 
 <img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="right" width="260px"/>
-<h3>Hey~	♡ I am Ako!</h3>
+<h3>Hey~	♡ <br> I am Ako!</h3>
 <br> 
 an Electron project that turns gogoanime
 <br> 
