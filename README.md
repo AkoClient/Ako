@@ -21,10 +21,8 @@ into a desktop app!
 &nbsp;
 
 
-**About**
+**What is this project exactly?**
 &nbsp;
-
-What is this project exactly?
 
 This is a electron based desktop app that turns gogoanime into a desktop app 
 without all those silly ads and trackers because who needs those right? :wink:
