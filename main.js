@@ -6,6 +6,7 @@ const fetch = require('cross-fetch');
 const client = require('discord-rich-presence')('1033927014995992596');
 const Store = require('electron-store');
 const store = new Store();
+const malScraper = require('mal-scraper')
 
 require('update-electron-app')()
 
@@ -22,6 +23,7 @@ let details = 'In main menu';
 let staterpc;
 let playON;
 
+let Thumbnail = 'ako1';
 
 
 //Presistance Varaibles
@@ -99,6 +101,12 @@ function createWindow() {
         let dtemp = newdtemp.replace('gogoanimes.org/watch/', '');
         let dtemp2 = dtemp.replaceAll('-', " ")
         let d = dtemp2.split("episode")[0];
+        
+        malScraper.getInfoFromName(d)
+  .then((data) => Thumbnail = data.picture)
+  .catch((err) => console.log(err))
+
+  
        // console.log(d);
         details = "Watching: " + capitalize(d);
         let epNum = dtemp2.split('episode').splice(1).join('episode')
@@ -106,11 +114,13 @@ function createWindow() {
         staterpc = "Ep " + epNum
         updateP()
       } else if (currentURL.includes("search")) {
+        Thumbnail = 'ako1'
         details = 'Searching...';
         staterpc = undefined;
         playON = undefined;
         updateP()
       } else {
+        Thumbnail = 'ako1'
         details = 'In main menu';
         staterpc = undefined;
         playON = undefined;
@@ -170,12 +180,13 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
 
+//ako1 = logo
 
 async function updateP() {
   client.updatePresence({
     state: staterpc,
     details: details,
-    largeImageKey: 'ako1',
+    largeImageKey: Thumbnail,
     largeImageText: "Ako Gogoanime client",
     smallImageKey: playON,
     instance: true,
