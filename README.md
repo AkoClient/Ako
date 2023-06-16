@@ -1,9 +1,10 @@
 <h1 align="center"><img src="./imgs/banner.png" width="400"></h1>
-<div align="right"> <img src="https://camo.githubusercontent.com/fabadd8b5a200291761524d925bdd73eee8a11c4dcc58044e99541d36fc05535/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636c69717a2d706f77657265642d626c75653f6c6f676f3d636c69717a267374796c653d666c61742d737175617265" alt="powered by Cliqz" data-canonical-src="https://img.shields.io/badge/cliqz-powered-blue?logo=cliqz&amp;style=flat-square" style="max-width: 100%;"> </div>
+<div align="right"> </div>
 
 <p align="center">
 &nbsp; 
 </p>
+
 
 <img src="https://media.tenor.com/VeFKHsQDLgkAAAAC/ako-tamaki-smile.gif" align="right" width="260px"/>
 <h3>Hey~	♡</h3>
@@ -16,7 +17,7 @@ into a desktop app!
 <br clear="left"/>
 &nbsp;
 
-
+>////////////////////this repo is for educational purposes only////////////////////
 ---
 &nbsp;
 
