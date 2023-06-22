@@ -1,4 +1,9 @@
+
+
 <h1 align="center"><img src="./imgs/banner.png" width="400"></h1>
+<div id="twitter" align="center">
+<a href="https://twitter.com/intent/tweet?text=Watch%20your%20favorite%20Anime%20without%20any%20ads%20using%20Ako!%20%0AA%20free%20open%20source%2C%20desktop%20client%20%F0%9F%8D%9C%0A%0Ahttps%3A%2F%2Fgithub.com%2FAkoClient%2FAko" ><img src="https://img.shields.io/badge/-share%20on%20twitter-blue?logo=twitter&style=for-the-badge" /></a>
+</div>
 <div align="right"> </div>
 
 <p align="center">
