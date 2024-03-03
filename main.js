@@ -90,44 +90,43 @@ function createWindow() {
       //re-inject logo onclick
       mainWindow.webContents.insertCSS('.logo.show.ads-evt {content: url("https://github.com/zoeeechu/Ako/blob/main/logo.png?raw=true");}')
 
-      currentURL = mainWindow.webContents.getURL()
-      console.log(currentURL)
-
-      //save last veiwed page
+      currentURL = mainWindow.webContents.getURL();
+      console.log(currentURL);
+      
+      // Save last viewed page
       store.set('p', currentURL);
-
+      
       if (currentURL.includes("watch")) {
-        playON = 'play'
-        newdtemp = currentURL.substr(12); /// remove https://ww5.
-        let dtemp = newdtemp.replace('gogoanimes.org/watch/', '');
-        let dtemp2 = dtemp.replaceAll('-', " ")
-        let d = dtemp2.split("episode")[0];
+        playON = 'play';
+        let newdtemp = currentURL.substr(12).replace('gogoanimes.org/watch/', '').replaceAll('-', " ");
+        let d = newdtemp.split("episode")[0];
         
         malScraper.getInfoFromName(d)
-  .then((data) => Thumbnail = data.picture)
-  .catch((err) => console.log(err))
-
-  
-       // console.log(d);
-        details = "Watching: " + capitalize(d);
-        let epNum = dtemp2.split('episode').splice(1).join('episode')
-        //console.log(epNum)
-        staterpc = "Ep " + epNum
-        updateP()
+          .then((data) => {
+            Thumbnail = data.picture;
+            details = "Watching: " + capitalize(d);
+            let epNum = newdtemp.split('episode').splice(1).join('episode');
+            staterpc = "Ep " + epNum;
+            updateP();
+          })
+          .catch((err) => {
+            console.log(err);
+            // Handle error gracefully
+          });
       } else if (currentURL.includes("search")) {
-        Thumbnail = 'ako1'
+        Thumbnail = 'ako1';
         details = 'Searching...';
         staterpc = undefined;
         playON = undefined;
-        updateP()
+        updateP();
       } else {
-        Thumbnail = 'ako1'
+        Thumbnail = 'ako1';
         details = 'In main menu';
         staterpc = undefined;
         playON = undefined;
-        updateP()
+        updateP();
       }
-
+      
     })
 
 
